@@ -78,7 +78,7 @@ const questions = [
   },
   {
     type: 'input',
-    message: 'Enter the Github url of your team member',
+    message: 'Enter the Github username of your team member',
     name: 'github',
     when: (answers) => answers.role === 'Engineer'
   },
@@ -123,7 +123,7 @@ function init() {
 
       console.log(employeeArray)
       //this is alper is doing, where we output to a json with information containing all the user's input in key value pairs
-      const filename = `./outputs/index.html`
+      const filename = `./dist/index.html`
       // const content = JSON.stringify(answers, null, 2) 
 
       
@@ -163,7 +163,6 @@ function init() {
               </tr>
             </tbody>
           </table>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     `
@@ -198,4 +197,3 @@ init();
 
 //to do:
 //get the icons working
-//get hte file to output into the original directory so that the css can be applied to it! 

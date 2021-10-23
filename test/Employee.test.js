@@ -9,26 +9,29 @@ describe("Employee", () => {
     });
 
     it("should set 'name' when initialized with name", () => {
+      const obj = new Employee("alicia", "101", "alicia@chen.com");
       const nam = "alicia";
 
       // const obj = new Employee(nam);
 
       // expect(obj.name).toEqual(nam);
       //above 2 lines is a a long way of writing this below: 
-      expect(obj.name).toEqual("alicia")
+      expect(obj.name).toEqual(nam)
     });
 
     it("should set 'id' when intialized with id", () => {
+      const obj = new Employee("alicia", "101", "alicia@chen.com");
       const id = "101";
 
       // const obj = new Employee(nam);
 
       // expect(obj.name).toEqual(nam);
       //above 2 lines is a a long way of writing this below: 
-      expect(obj.id).toEqual("101")
+      expect(obj.id).toEqual(id)
     });
 
     it("should set 'email' when initialized with email", () => {
+      const obj = new Employee("alicia", "101", "alicia@chen.com");
       const email = "alicia@chen.com"
 
       // const obj = new Employee(nam);
