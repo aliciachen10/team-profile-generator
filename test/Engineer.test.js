@@ -12,10 +12,6 @@ describe("Engineer", () => {
       const obj = new Engineer("alicia", "101", "alicia@chen.com");
       const nam = "alicia";
 
-      // const obj = new Engineer(nam);
-
-      // expect(obj.name).toEqual(nam);
-      //above 2 lines is a a long way of writing this below: 
       expect(obj.name).toEqual(nam)
     });
 
@@ -61,7 +57,7 @@ describe("Engineer", () => {
   });
 
   describe("getName", () => {
-    it("should return the name of the Engineer", () => {
+    it("should return a new 'Engineer' object", () => {
       const obj = new Engineer("alicia", "101", "alicia@chen.com", "aliciachen10");
 
       expect(obj instanceof Engineer).toEqual(true); 
@@ -77,11 +73,6 @@ describe("Engineer", () => {
   });
 
   describe("getRole", () => {
-    it("should return a new 'Engineer' object", () => {
-      const obj = new Engineer("alicia", "101", "alicia@chen.com", "aliciachen10");
-
-      expect(obj instanceof Engineer).toEqual(true);
-    });
 
     it("should return a new 'Engineer''s role", () => {
       const role = "Engineer";
@@ -93,11 +84,6 @@ describe("Engineer", () => {
   });
 
   describe("getGitHub", () => {
-    it("should return a new 'Engineer' object", () => {
-      const obj = new Engineer("alicia", "101", "alicia@chen.com", "aliciachen10");
-
-      expect(obj instanceof Engineer).toEqual(true);
-    });
 
     it("should return a new 'Engineer''s github", () => {
       const github = "aliciachen10";
@@ -109,11 +95,6 @@ describe("Engineer", () => {
   });
 
   describe("getId", () => {
-    it("should return a new 'Engineer' object", () => {
-      const obj = new Engineer("alicia", "101", "alicia@chen.com", "aliciachen10");
-
-      expect(obj instanceof Engineer).toEqual(true);
-    });
 
     it("should return a new 'Engineer''s id", () => {
       const id = "101";
@@ -125,11 +106,6 @@ describe("Engineer", () => {
   });
 
   describe("getEmail", () => {
-    it("should return a new 'Engineer' object", () => {
-      const obj = new Engineer("alicia", "101", "alicia@chen.com", "aliciachen10");
-
-      expect(obj instanceof Engineer).toEqual(true);
-    });
 
     it("should return a new 'Engineer''s email", () => {
       const email = "alicia@chen.com";

@@ -12,10 +12,6 @@ describe("Intern", () => {
       const obj = new Intern("alicia", "101", "alicia@chen.com");
       const nam = "alicia";
 
-      // const obj = new Intern(nam);
-
-      // expect(obj.name).toEqual(nam);
-      //above 2 lines is a a long way of writing this below: 
       expect(obj.name).toEqual(nam)
     });
 
@@ -61,7 +57,7 @@ describe("Intern", () => {
   });
 
   describe("getName", () => {
-    it("should return the name of the Intern", () => {
+    it("should return a new 'Intern' object", () => {
       const obj = new Intern("alicia", "101", "alicia@chen.com", "UNC");
 
       expect(obj instanceof Intern).toEqual(true); 
@@ -77,11 +73,6 @@ describe("Intern", () => {
   });
 
   describe("getRole", () => {
-    it("should return a new 'Intern' object", () => {
-      const obj = new Intern("alicia", "101", "alicia@chen.com", "UNC");
-
-      expect(obj instanceof Intern).toEqual(true);
-    });
 
     it("should return a new 'Intern''s role", () => {
       const role = "Intern";
@@ -93,11 +84,6 @@ describe("Intern", () => {
   });
 
   describe("getschool", () => {
-    it("should return a new 'Intern' object", () => {
-      const obj = new Intern("alicia", "101", "alicia@chen.com", "UNC");
-
-      expect(obj instanceof Intern).toEqual(true);
-    });
 
     it("should return a new 'Intern''s school", () => {
       const school = "UNC";
@@ -109,11 +95,6 @@ describe("Intern", () => {
   });
 
   describe("getId", () => {
-    it("should return a new 'Intern' object", () => {
-      const obj = new Intern("alicia", "101", "alicia@chen.com", "UNC");
-
-      expect(obj instanceof Intern).toEqual(true);
-    });
 
     it("should return a new 'Intern''s id", () => {
       const id = "101";
@@ -125,11 +106,6 @@ describe("Intern", () => {
   });
 
   describe("getEmail", () => {
-    it("should return a new 'Intern' object", () => {
-      const obj = new Intern("alicia", "101", "alicia@chen.com", "UNC");
-
-      expect(obj instanceof Intern).toEqual(true);
-    });
 
     it("should return a new 'Intern''s email", () => {
       const email = "alicia@chen.com";

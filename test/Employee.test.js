@@ -11,11 +11,7 @@ describe("Employee", () => {
     it("should set 'name' when initialized with name", () => {
       const obj = new Employee("alicia", "101", "alicia@chen.com");
       const nam = "alicia";
-
-      // const obj = new Employee(nam);
-
-      // expect(obj.name).toEqual(nam);
-      //above 2 lines is a a long way of writing this below: 
+ 
       expect(obj.name).toEqual(nam)
     });
 
@@ -44,7 +40,7 @@ describe("Employee", () => {
   });
 
   describe("getName", () => {
-    it("should return the name of the Employee", () => {
+    it("should return a new 'Employee' object", () => {
       const obj = new Employee("alicia", "101", "alicia@chen.com");
 
       expect(obj instanceof Employee).toEqual(true); 
@@ -60,11 +56,6 @@ describe("Employee", () => {
   });
 
   describe("getRole", () => {
-    it("should return a new 'Employee' object", () => {
-      const obj = new Employee("alicia", "101", "alicia@chen.com");
-
-      expect(obj instanceof Employee).toEqual(true);
-    });
 
     it("should return a new 'Employee''s role", () => {
       const role = "Employee";
@@ -76,11 +67,6 @@ describe("Employee", () => {
   });
 
   describe("getId", () => {
-    it("should return a new 'Employee' object", () => {
-      const obj = new Employee("alicia", "101", "alicia@chen.com");
-
-      expect(obj instanceof Employee).toEqual(true);
-    });
 
     it("should return a new 'Employee''s id", () => {
       const id = "101";
@@ -92,11 +78,6 @@ describe("Employee", () => {
   });
 
   describe("getEmail", () => {
-    it("should return a new 'Employee' object", () => {
-      const obj = new Employee("alicia", "101", "alicia@chen.com");
-
-      expect(obj instanceof Employee).toEqual(true);
-    });
 
     it("should return a new 'Employee''s email", () => {
       const email = "alicia@chen.com";

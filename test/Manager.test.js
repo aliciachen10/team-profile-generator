@@ -12,10 +12,6 @@ describe("Manager", () => {
       const obj = new Manager("alicia", "101", "alicia@chen.com");
       const nam = "alicia";
 
-      // const obj = new Manager(nam);
-
-      // expect(obj.name).toEqual(nam);
-      //above 2 lines is a a long way of writing this below: 
       expect(obj.name).toEqual(nam)
     });
 
@@ -61,7 +57,7 @@ describe("Manager", () => {
   });
 
   describe("getName", () => {
-    it("should return the name of the Manager", () => {
+    it("should return a new 'Manager' object", () => {
       const obj = new Manager("alicia", "101", "alicia@chen.com", "A01");
 
       expect(obj instanceof Manager).toEqual(true); 
@@ -77,11 +73,6 @@ describe("Manager", () => {
   });
 
   describe("getRole", () => {
-    it("should return a new 'Manager' object", () => {
-      const obj = new Manager("alicia", "101", "alicia@chen.com", "A01");
-
-      expect(obj instanceof Manager).toEqual(true);
-    });
 
     it("should return a new 'Manager''s role", () => {
       const role = "Manager";
@@ -93,11 +84,6 @@ describe("Manager", () => {
   });
 
   describe("getOffice", () => {
-    it("should return a new 'Manager' object", () => {
-      const obj = new Manager("alicia", "101", "alicia@chen.com", "A01");
-
-      expect(obj instanceof Manager).toEqual(true);
-    });
 
     it("should return a new 'Manager''s officeNumber", () => {
       const officeNumber = "A01";
@@ -109,11 +95,6 @@ describe("Manager", () => {
   });
 
   describe("getId", () => {
-    it("should return a new 'Manager' object", () => {
-      const obj = new Manager("alicia", "101", "alicia@chen.com", "A01");
-
-      expect(obj instanceof Manager).toEqual(true);
-    });
 
     it("should return a new 'Manager''s id", () => {
       const id = "101";
@@ -125,11 +106,6 @@ describe("Manager", () => {
   });
 
   describe("getEmail", () => {
-    it("should return a new 'Manager' object", () => {
-      const obj = new Manager("alicia", "101", "alicia@chen.com", "A01");
-
-      expect(obj instanceof Manager).toEqual(true);
-    });
 
     it("should return a new 'Manager''s email", () => {
       const email = "alicia@chen.com";
