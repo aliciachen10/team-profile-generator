@@ -4,7 +4,7 @@
 
 
 # Description
-The team profile generator utilizes a command-line prompt interface to log information about individual employees. It creates a card for each individual employee and populates it with different information based upon whether that employee is a manager, engineer, or intern. This application was built with Javascript and showcases usage of Jest for testing.  
+The team profile generator utilizes a command-line prompt interface to log information about individual employees. It creates a card for each individual employee and populates it with different information based upon whether that employee is a manager, engineer, or intern. This application was built with Javascript and showcases usage of the Inquirer package (for prompts), object oriented programming (for creating employee, manager, intern, and engineer classes), and Jest (for testing).  
 
 ##### Table of Contents 
 [Installation](#installation)  
