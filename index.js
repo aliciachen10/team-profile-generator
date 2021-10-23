@@ -29,80 +29,12 @@ let htmlbody = `<!DOCTYPE html>
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const Engineer = require('./lib/engineer');
+const Manager = require('./lib/manager');
+const Intern = require('./lib/intern');
 
 const employeeArray = [];
-//class employee
-class Employee {
-  // Just like constructor functions, classes can accept arguments
-  constructor(name, id, email) {
-    this.name = name;
-    this.id = id;
-    this.email = email;
-  }
-
-  getName() {
-    return this.name
-  }
-
-  getId() {
-    return this.id
-  }
-
-  getEmail() {
-    return this.email
-  }
-
-  getRole() {
-    return "Employee"
-  }
-
-}
-
-//extend the employee class:
-class Manager extends Employee {
-  constructor(name, id, email, officeNumber) {
-    super(name, id, email); // pass these into the shape class 
-    this.officeNumber = officeNumber;
-  }
-
-  getRole() {
-    return "Manager"
-  }
-}
-
-//class engineer:
-class Engineer extends Employee {
-  constructor(name, id, email, github) {
-    super(name, id, email); // pass these into the shape class 
-    this.github = github;
-  }
-
-  getGitHub() {
-    return this.github;
-  }
-
-  getRole() {
-    return "Engineer"
-  }
-}
-
-//class intern:
-class Intern extends Employee {
-  constructor(name, id, email, school) {
-    super(name, id, email); // pass these into the shape class 
-    this.school = school;
-  }
-
-  getSchool() {
-    return this.school;
-  }
-
-  getRole() {
-    return "Intern"
-  }
-}
-
-//old code from past projects 
+let lastInfo;
 
 // TODO: Create an array of questions for user input
 const selectRole = [
@@ -141,7 +73,7 @@ const questions = [
   {
     type: 'input',
     message: 'Enter the office number of your manager',
-    name: 'officenumber',
+    name: 'officeNumber',
     when: (answers) => answers.role === 'Manager'
   },
   {
@@ -162,94 +94,6 @@ const questions = [
     message: "Are you done?",
   }
 ];
-
-//manager questions
-const managerQuestions = [
-  {
-    type: 'input',
-    message: 'Enter the name of your team member',
-    name: 'name',
-  },
-  {
-    type: 'input',
-    message: 'Enter the id of your team member',
-    name: 'id'
-  },
-  {
-    type: 'input',
-    message: 'Enter the email of your team member',
-    name: 'email'
-  },
-  {
-    type: 'input',
-    message: 'Enter the office number of your manager',
-    name: 'officenumber'
-  },
-  {
-    type: "confirm",
-    name: "is_finished",
-    message: "Are you done?",
-  }
-];
-
-//engineer questions
-const engineerQuestions = [
-  {
-    type: 'input',
-    message: 'Enter the name of your team member',
-    name: 'name',
-  },
-  {
-    type: 'input',
-    message: 'Enter the id of your team member',
-    name: 'id'
-  },
-  {
-    type: 'input',
-    message: 'Enter the email of your team member',
-    name: 'email'
-  },
-  {
-    type: 'input',
-    message: 'Enter the Github url of your team member',
-    name: 'github'
-  },
-  {
-    type: "confirm",
-    name: "is_finished",
-    message: "Are you done?",
-  },
-];
-
-//intern questions
-const internQuestions = [
-  {
-    type: 'input',
-    message: 'Enter the name of your team member',
-    name: 'name',
-  },
-  {
-    type: 'input',
-    message: 'Enter the id of your team member',
-    name: 'id'
-  },
-  {
-    type: 'input',
-    message: 'Enter the email of your team member',
-    name: 'email'
-  },
-  {
-    type: 'input',
-    message: 'Enter the school of your intern',
-    name: 'school'
-  },
-  {
-    type: "confirm",
-    name: "is_finished",
-    message: "Are you done?",
-  },
-];
-
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -286,6 +130,17 @@ function init() {
 
     if (answers.is_finished) {
       for (i = 0; i < employeeArray.length; i++) {
+        if (employeeArray[i]['role'] === 'Manager') {
+          console.log(employeeArray[i])
+          lastInfo = `${employeeArray[i]['office number']}`
+          console.log(lastInfo)
+        } else if (employeeArray[i]['role'] == 'Intern') {
+          lastInfo = `${employeeArray[i]['school']}`
+          console.log(lastInfo)
+        } else if (employeeArray[i]['role'] == 'Engineer') {
+          lastInfo = `<a href="http://www.github.com/${employeeArray[i]['Github']}">${employeeArray[i]['Github']}</a>`
+          console.log(lastInfo)
+        }
 
         const content = `
       <div class="card" style="width: 18rem;">
@@ -304,7 +159,7 @@ function init() {
                 <td>Email: <a href="mailto:${employeeArray[i]['email']}">${employeeArray[i]['email']}</a></td>
               </tr>
               <tr>
-                <td>GitHub: <a href="http://www.github.com/aliciachen10">jared1010</a></td>
+                <td>${Object.keys(employeeArray[i])[4]}: ${lastInfo}</td>
               </tr>
             </tbody>
           </table>
@@ -341,3 +196,6 @@ function init() {
 init();
 
 
+//to do:
+//get the icons working
+//get hte file to output into the original directory so that the css can be applied to it! 
