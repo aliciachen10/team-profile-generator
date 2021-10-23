@@ -147,6 +147,7 @@ function init() {
         <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
         <div class="mb-5 p-3 card-head">
           <h5 class="card-title">${employeeArray[i]['name']}</h5>
+          <i class="fas fa-mug-hot"></i>
           <h6>${employeeArray[i]['role']}</h6>
         </div>
         <div class="card-body">
